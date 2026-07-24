@@ -3,9 +3,6 @@ import { useState, useEffect } from 'react';
 import Login from './components/Login';
 import CostDashboard from './components/CostDashboard';
 
-const isProd = import.meta.env.VITE_ENV === 'prod';
-const basename = isProd ? '/cost-dashboard-demo' : '/';
-
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -25,7 +22,7 @@ function App() {
   };
 
   return (
-    <Router basename={basename}>
+    <Router>
       <Routes>
         <Route
           path="/"

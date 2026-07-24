@@ -2,12 +2,7 @@
   command = "npm run build"
   publish = "dist"
 
-# SPA rewrite: all routes under /cost-dashboard-demo/ serve index.html
-[[redirects]]
-  from = "/cost-dashboard-demo/*"
-  to = "/cost-dashboard-demo/index.html"
-  status = 200
-
+# SPA fallback: all routes serve index.html
 [[redirects]]
   from = "/*"
   to = "/index.html"
