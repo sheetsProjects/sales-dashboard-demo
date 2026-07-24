@@ -2,3 +2,5 @@
 
 .env.production
 .env.development
+
+/dist
