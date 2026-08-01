@@ -26,7 +26,7 @@ const Login = ({ onLogin }) => {
             if (username === "admin" && password === "admin") {
                 localStorage.setItem("isAuthenticated", "true");
                 localStorage.setItem("userName", "Admin User");
-                localStorage.setItem("userRole", "Cost Controller");
+                localStorage.setItem("userRole", "Sales Analyst");
                 if (onLogin) onLogin();
                 navigate("/dashboard");
             } else {
@@ -57,25 +57,25 @@ const Login = ({ onLogin }) => {
                     {/* Logo */}
                     <div className="inline-flex items-center justify-center gap-3 bg-white/80 backdrop-blur-sm px-8 py-4 rounded-2xl shadow-lg">
                         <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center shadow-md">
-                            <span className="text-white text-xl font-extrabold tracking-tight">CI</span>
+                            <span className="text-white text-xl font-extrabold tracking-tight">AG</span>
                         </div>
                         <div className="flex flex-col leading-tight text-left">
-                            <span className="text-lg font-extrabold text-slate-800 tracking-tight">Cost Insights</span>
-                            <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest">Dashboard</span>
+                            <span className="text-lg font-extrabold text-slate-800 tracking-tight">AutoGlobe</span>
+                            <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest">Sales Dashboard</span>
                         </div>
                     </div>
 
                     {/* Headline */}
                     <div className="space-y-3">
                         <h2 className="text-4xl lg:text-5xl font-extrabold text-slate-800 leading-tight">
-                            Smart Budget
+                            Used-Car Sales
                             <br />
                             <span className="bg-gradient-to-r from-blue-600 via-cyan-600 to-blue-500 bg-clip-text text-transparent">
                                 Intelligence
                             </span>
                         </h2>
                         <p className="text-lg text-slate-600 max-w-md">
-                            AI-powered cost tracking with real-time analytics and intelligent insights for better decision making.
+                            Track revenue, branch performance and inventory across every AutoGlobe lot — with AI-ranked insights.
                         </p>
                     </div>
 
@@ -106,7 +106,7 @@ const Login = ({ onLogin }) => {
                         {/* Form Header */}
                         <div className="text-center mb-8">
                             <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center mx-auto mb-4 shadow-lg overflow-hidden">
-                                <span className="text-white text-2xl font-extrabold tracking-tight">CI</span>
+                                <span className="text-white text-2xl font-extrabold tracking-tight">AG</span>
                             </div>
                             <h2 className="text-2xl font-bold text-slate-800">Welcome Back</h2>
                             <p className="text-slate-500 text-sm mt-1">Sign in to access your dashboard</p>

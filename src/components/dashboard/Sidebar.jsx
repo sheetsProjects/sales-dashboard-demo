@@ -1,4 +1,4 @@
-import { LayoutDashboard, TrendingUp, Sparkles, Loader2, ChevronRight, ChevronLeft, AlertTriangle, PercentCircle, Users } from 'lucide-react';
+import { LayoutDashboard, TrendingUp, Package, Building2, Users, UserRound, Sparkles, Loader2, ChevronRight, ChevronLeft, ShieldCheck } from 'lucide-react';
 
 const Sidebar = ({
   activePage,
@@ -14,11 +14,13 @@ const Sidebar = ({
   onToggleCollapse
 }) => {
   const mainMenuItems = [
-    { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
-    { id: 'analysis', label: 'Cost Analysis', icon: TrendingUp },
-    { id: 'critical-parts', label: 'Critical Parts', icon: AlertTriangle },
-    { id: 'contribution-margin', label: 'Contribution Margin', icon: PercentCircle },
-    { id: 'users', label: 'Users', icon: Users },
+    { id: 'dashboard',   label: 'Dashboard',      icon: LayoutDashboard },
+    { id: 'analysis',    label: 'Sales Analysis', icon: TrendingUp },
+    { id: 'inventory',   label: 'Inventory',      icon: Package },
+    { id: 'branches',    label: 'Branches',       icon: Building2 },
+    { id: 'sales-reps',  label: 'Sales Reps',     icon: UserRound },
+    { id: 'customers',   label: 'Customers',      icon: Users },
+    { id: 'users',       label: 'Admin Users',    icon: ShieldCheck },
   ];
 
   return (
@@ -28,23 +30,23 @@ const Sidebar = ({
         {collapsed ? (
           <div className="p-3 flex items-center justify-center">
             <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center shadow-md">
-              <span className="text-white text-lg font-extrabold tracking-tight">CI</span>
+              <span className="text-white text-lg font-extrabold tracking-tight">AG</span>
             </div>
           </div>
         ) : (
           <div className="px-4 py-5 flex items-center justify-center gap-3">
             <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center shadow-md shrink-0">
-              <span className="text-white text-base font-extrabold tracking-tight">CI</span>
+              <span className="text-white text-base font-extrabold tracking-tight">AG</span>
             </div>
             <div className="flex flex-col leading-tight">
-              <span className="text-base font-extrabold text-slate-800 tracking-tight">Cost Insights</span>
-              <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest">Dashboard</span>
+              <span className="text-base font-extrabold text-slate-800 tracking-tight">AutoGlobe</span>
+              <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest">Sales Dashboard</span>
             </div>
           </div>
         )}
         <button
           onClick={onToggleCollapse}
-          className={`absolute top-1/2 -translate-y-1/2 ${collapsed ? '-right-3.5' : '-right-3.5'} w-7 h-7 rounded-full border-2 border-slate-300 bg-white hover:bg-slate-50 hover:border-slate-400 flex items-center justify-center transition-all shadow-sm hover:shadow group z-10`}
+          className={`absolute top-1/2 -translate-y-1/2 -right-3.5 w-7 h-7 rounded-full border-2 border-slate-300 bg-white hover:bg-slate-50 hover:border-slate-400 flex items-center justify-center transition-all shadow-sm hover:shadow group z-10`}
           title={collapsed ? "Expand sidebar" : "Collapse sidebar"}
         >
           {collapsed ? (
@@ -65,7 +67,7 @@ const Sidebar = ({
             key={item.id}
             onClick={() => { setActivePage(item.id); setSelectedCategory(null); }}
             title={collapsed ? item.label : ''}
-            className={`w-full flex items-center ${collapsed ? 'justify-center' : 'gap-3'} ${collapsed ? 'px-2' : 'px-4'} py-3 rounded-xl text-sm font-medium transition-all relative group cursor-pointer ${
+            className={`w-full flex items-center ${collapsed ? 'justify-center' : 'gap-3'} ${collapsed ? 'px-2' : 'px-4'} py-2.5 rounded-xl text-sm font-medium transition-all relative group cursor-pointer ${
               activePage === item.id && !selectedCategory
                 ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg shadow-blue-500/30'
                 : 'text-slate-600 hover:bg-white hover:shadow-md'
@@ -101,7 +103,7 @@ const Sidebar = ({
         </div>
       )}
 
-      {/* Business Insights Section */}
+      {/* AI Insights Section */}
       {!collapsed && (
         <div className="flex-1 p-4 overflow-y-auto">
           {insightsProcessing ? (
@@ -129,7 +131,7 @@ const Sidebar = ({
                 <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center">
                   <Sparkles className="w-3.5 h-3.5 text-white" />
                 </div>
-                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Business Insights</span>
+                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">AI Insights</span>
               </div>
               <div className="space-y-1 px-3">
                 {categories.map((insight, index) => {
@@ -176,7 +178,7 @@ const Sidebar = ({
                 <Sparkles className="w-6 h-6 text-white" />
               </div>
               <p className="text-xs font-semibold text-slate-700 mb-1">Insights Ready</p>
-              <p className="text-[10px] text-slate-500">Re-upload data to refresh business insights</p>
+              <p className="text-[10px] text-slate-500">Re-upload data to refresh AI insights</p>
             </div>
           ) : null}
         </div>
