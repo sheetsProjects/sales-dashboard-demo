@@ -1,7 +1,5 @@
 /node_modules
 
-.env
-.env.*
 !.env.example
 
 /dist
@@ -11,3 +9,4 @@ temp_interactive_push.bat
 
 # Excel / Word lock files (e.g. ~$Workbook.xlsx)
 ~$*
+config.bat
